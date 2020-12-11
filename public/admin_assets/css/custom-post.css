@@ -1,0 +1,27 @@
+.custom-post-item{
+    display:flex;
+    align-items:stretch;
+    flex-flow:row;
+    overflow:hidden;
+    border-radius:6px;
+    border:1px solid #eee;
+}
+.custom-post-item .image-container{
+    width:100px;
+    margin-right:1em;
+}
+.custom-post-item .image-container img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+
+.custom-post-item .text-container{
+    padding:.5em;
+    width:calc(100%);
+}
+
+.custom-post-item .text-container h5, .custom-post-item .text-container p{
+    margin-bottom:0;
+}

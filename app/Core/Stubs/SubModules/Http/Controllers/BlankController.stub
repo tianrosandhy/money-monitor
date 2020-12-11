@@ -1,0 +1,55 @@
+<?php
+namespace [NAMESPACE]\Http\Controllers;
+
+use App\Core\Http\Controllers\BaseController;
+use [NAMESPACE]\Models\[MODULE_NAME];
+use [NAMESPACE]\Presenters\[MODULE_NAME]IndexPresenter;
+use [NAMESPACE]\Presenters\[MODULE_NAME]CrudPresenter;
+use [NAMESPACE]\Http\Process\[MODULE_NAME]DatatableProcess;
+use [NAMESPACE]\Http\Process\[MODULE_NAME]CrudProcess;
+use [NAMESPACE]\Http\Process\[MODULE_NAME]DeleteProcess;
+
+class [MODULE_NAME]Controller extends BaseController
+{
+	public function index(){
+		return (new [MODULE_NAME]IndexPresenter)->render();
+	}
+
+	public function datatable(){
+		return (new [MODULE_NAME]DatatableProcess)
+			->type('datatable')
+			->handle();
+	}
+
+	public function create(){
+		$data = new [MODULE_NAME];
+		return (new [MODULE_NAME]CrudPresenter($data))->render();
+	}
+
+	public function store(){
+		return (new [MODULE_NAME]CrudProcess)
+			->type('http')
+			->handle();
+	}
+
+	public function edit($id){
+		$data = [MODULE_NAME]::findOrFail($id);
+		return (new [MODULE_NAME]CrudPresenter($data))->render();
+	}
+
+	public function update($id){
+		$data = [MODULE_NAME]::findOrFail($id);
+		return (new [MODULE_NAME]CrudProcess($data))
+			->type('http')
+			->handle();
+	}
+	
+	public function delete($id=null){
+		return (new [MODULE_NAME]DeleteProcess)
+			->setModel(new [MODULE_NAME])
+			->setId($id)
+			->type('ajax')
+			->handle();
+	}
+
+}

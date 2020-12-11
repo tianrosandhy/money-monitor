@@ -1,0 +1,2 @@
+<?php
+generateAdminRoute('[LOWERCASE_MODULE_NAME]', '[MODULE_NAME]Controller');

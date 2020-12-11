@@ -1,0 +1,9 @@
+<?php
+return [
+	'index' => '[PROPER_MODULE_NAME] Data',
+	'add' => 'Create New [PROPER_MODULE_NAME]',
+	'edit' => 'Edit [PROPER_MODULE_NAME]',
+	'menu' => [
+		'[LOWERCASE_MODULE_NAME]' => '[PROPER_MODULE_NAME]'
+	]
+];

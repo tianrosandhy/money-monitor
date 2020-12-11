@@ -1,0 +1,69 @@
+<?php
+namespace [NAMESPACE]\Http\Skeleton;
+
+use DataStructure;
+use App\Core\Http\Skeleton\BaseSkeleton;
+use [NAMESPACE]\Models\[MODULE_NAME];
+use Permission;
+
+class [MODULE_NAME]Skeleton extends BaseSkeleton
+{
+	public $multi_language = true;
+
+	public function handle(){
+		$this->registers([
+			DataStructure::checker(),
+			DataStructure::field('title')
+				->name('Title')
+				->inputType('text')
+				->createValidation('required', true)
+				->validationTranslation([
+					'title.required' => 'Please fill the title'
+				]),
+			DataStructure::field('description')
+				->name('Description')
+				->hideTable()
+				->inputType('richtext'),
+			DataStructure::field('image')
+				->name('Image')
+				->inputType('image')
+				->searchable(false)
+				->orderable(false)
+				->tabGroup('Details'),
+			DataStructure::switcher('is_active', 'Is Active')
+		]);
+	}
+
+	public function dataTableRoute(){
+		return route('admin.[LOWERCASE_MODULE_NAME].datatable');
+	}
+
+	//public function customFilter($context){
+	//	return $context;
+	//}
+
+	public function model(){
+		return new [MODULE_NAME];
+	}
+
+	public function rowFormat($row){
+		return [
+			'id' => $this->checkerFormat($row),
+			'title' => $row->title,
+			'image' => '<img src="'.$row->getImageUrl('image', 'thumb').'" style="height:50px;">',
+			'is_active' => $this->switcherFormat($row, 'is_active', (Permission::has('admin.[LOWERCASE_MODULE_NAME].switch') ? 'toggle' : 'label')),
+			'action' => $this->actionButton($row)
+		];
+	}
+
+	protected function actionButton($row){
+		$out = '';
+		if(Permission::has('admin.[LOWERCASE_MODULE_NAME].edit')){
+			$out .= '<a href="'.route('admin.[LOWERCASE_MODULE_NAME].edit', ['id' => $row->id]).'" class="btn btn-info">Edit</a>';
+		}
+		if(Permission::has('admin.[LOWERCASE_MODULE_NAME].delete')){
+			$out .= '<a href="'.route('admin.[LOWERCASE_MODULE_NAME].delete', ['id' => $row->id]).'" class="btn btn-danger delete-button">Delete</a>';
+		}
+		return $out;
+	}
+}

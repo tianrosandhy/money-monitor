@@ -1,0 +1,9 @@
+<?php
+namespace [NAMESPACE]\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class [MODULE_NAME]Translator extends Model
+{
+	
+}

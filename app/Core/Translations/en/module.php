@@ -1,0 +1,40 @@
+<?php
+return [
+    'menu' => [
+        'dashboard' => 'Dashboard',
+        'management' => 'Management',
+        'language_management' => 'Language Setting',
+        'privilege_management' => 'Privilege Management',
+        'user_list' => 'User Lists',
+        'log_management' => 'Log Management',
+        'push_token' => 'Push Token Device',
+    ],
+    'global' => [
+        'language' => 'Language',
+        'go_to_site' => 'Go To Site',
+        'my_profile' => 'My Profile',
+        'logout' => 'Log Out',
+        'setting' => 'Setting',
+        'notification' => 'Notification',
+        'no_notification' => 'No Notification',
+        'internet_disconnect' => 'Oops, your internet is disconnected. Please check your signal',
+        'back_to_homepage' => 'Back to Homepage',
+    ],
+    'login' => [
+        'h1' => 'Welcome back!',
+        'h2' => 'Enter your email address and password to access admin panel.',
+        'remember_me' => 'Remember Me',
+        'forgot_password' => 'Forgot Password?',
+        'forgot_description' => 'If you forgot your password, please type your account email and we will send the password reset link to your email.',
+    ],
+    'form' => [
+        'save_setting' => 'Save Setting',
+        'save' => 'Save',
+        'save_and_exit' => 'Save and Exit',
+        'close' => 'Close',
+        'delete' => 'Hapus',
+        'delete_selected' => 'Hapus Data Terpilih',
+        'add_data' => 'Tambah Data',
+        'back' => 'Back',
+    ],
+];

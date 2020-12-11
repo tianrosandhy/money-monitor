@@ -1,0 +1,54 @@
+<?php
+namespace [NAMESPACE]\Presenters;
+
+use App\Core\Presenters\BaseViewPresenter;
+use DataTable;
+use [NAMESPACE]\Http\Skeleton\[MODULE_NAME]Skeleton;
+use Permission;
+
+class [MODULE_NAME]IndexPresenter extends BaseViewPresenter
+{
+	public function __construct(){
+		$this->title = __('post::module.[LOWERCASE_MODULE_NAME].index');
+		$this->view = 'core::master.index';
+		#if you want to override this index view, you can use below view instead
+		//$this->view = '[LOWERCASE_MODULE_NAME]::index';
+
+		$this->batch_delete_url = route('admin.[LOWERCASE_MODULE_NAME].delete');
+		$this->skeleton = new [MODULE_NAME]Skeleton;
+		$this->datatable = DataTable::setSkeleton($this->skeleton);
+		$this->control_buttons = [];
+		if(!config('module-setting.[LOWERCASE_MODULE_NAME].hide_back_to_homepage_button')){
+			$this->control_buttons[] = [
+				'url' => admin_url('/'),
+				'label' => '{{ __('core::module.global.back_to_homepage') }}',
+				'icon' => 'home'
+			];
+		}
+		if(!config('module-setting.[LOWERCASE_MODULE_NAME].hide_add_button')){
+			if(Permission::has('admin.[LOWERCASE_MODULE_NAME].create')){
+				$this->control_buttons[] = [
+					'url' => route('admin.[LOWERCASE_MODULE_NAME].create'),
+					'label' => __('core::module.form.add_data'),
+					'type' => 'success',
+					'icon' => 'plus'
+				];
+			}
+		}
+		if(!config('module-setting.[LOWERCASE_MODULE_NAME].hide_filter')){
+			$this->control_buttons[] = [
+				'label' => 'Filter',
+				'icon' => 'filter',
+				'type' => 'primary',
+				'attr' => [
+					'data-toggle' => 'collapse',
+					'data-target' => '#searchBox-' . $this->skeleton->name()
+				]
+			];
+		}
+	}
+
+	public function setSelectedMenuName(){
+		return '[LOWERCASE_MODULE_NAME]';
+	}
+}

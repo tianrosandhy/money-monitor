@@ -1,0 +1,30 @@
+<?php
+namespace [NAMESPACE]\Presenters;
+
+use App\Core\Presenters\BaseViewPresenter;
+use DataTable;
+use [NAMESPACE]\Http\Skeleton\[MODULE_NAME]Skeleton;
+
+class [MODULE_NAME]CrudPresenter extends BaseViewPresenter
+{
+	public function __construct($instance=null){
+		if(isset($instance->id)){
+			$this->title = __('post::module.[LOWERCASE_MODULE_NAME].edit');
+		}
+		else{
+			$this->title = __('post::module.[LOWERCASE_MODULE_NAME].add');
+		}
+		$this->data = $instance;
+		$this->back_url = route('admin.[LOWERCASE_MODULE_NAME].index');
+		$this->view = 'core::master.crud';
+		#if you want to override this crud view, you can use below view instead
+		// $this->view = '[LOWECASE_MODULE_NAME]::crud';
+
+		$this->skeleton = new [MODULE_NAME]Skeleton;
+		$this->config = config('module-setting.[LOWERCASE_MODULE_NAME]');
+	}
+
+	public function setSelectedMenuName(){
+		return '[LOWERCASE_MODULE_NAME]';
+	}
+}

@@ -1,0 +1,13 @@
+<?php
+namespace [NAMESPACE]\Services;
+
+use App\Core\Exceptions\InstanceException;
+use App\Core\Services\BaseInstance;
+use [NAMESPACE]\Models\[MODULE_NAME];
+
+class [MODULE_NAME]Instance extends BaseInstance
+{
+	public function __construct(){
+		parent::__construct(new [MODULE_NAME]);
+	}
+}

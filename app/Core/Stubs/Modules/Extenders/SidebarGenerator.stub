@@ -1,0 +1,20 @@
+<?php
+namespace [NAMESPACE]\Extenders;
+
+use App\Core\Components\Sidebar\SidebarRegistration;
+use SidebarItem;
+
+class SidebarGenerator extends SidebarRegistration
+{
+	public function handle(){
+		// generate sidebar for core menus
+		$this->registerSidebars([
+			SidebarItem::setName('ADMIN.[MODULE_NAME]')
+				->setLabel(__('[LOWERCASE_MODULE_NAME]::module.menu.[LOWERCASE_MODULE_NAME]'))
+				->setRoute('admin.[LOWERCASE_MODULE_NAME].index')
+				->setIcon('paperclip')
+				->setSortNo(5)
+				->setActiveKey('[LOWERCASE_MODULE_NAME]'),
+		]);
+	}
+}

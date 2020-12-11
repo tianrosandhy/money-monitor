@@ -1,0 +1,12 @@
+<?php
+return [
+	'[PROPER_MODULE_NAME]' => [
+		'[PROPER_MODULE_NAME]' => [
+			'admin.[LOWERCASE_MODULE_NAME].index',
+			'admin.[LOWERCASE_MODULE_NAME].create',
+			'admin.[LOWERCASE_MODULE_NAME].edit',
+			'admin.[LOWERCASE_MODULE_NAME].delete',
+			'admin.[LOWERCASE_MODULE_NAME].switch',
+		]
+	]
+];

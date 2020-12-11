@@ -1,0 +1,6 @@
+<?php
+namespace [NAMESPACE]\Exceptions;
+
+use Exception;
+
+class [MODULE_NAME]Exception extends Exception{}

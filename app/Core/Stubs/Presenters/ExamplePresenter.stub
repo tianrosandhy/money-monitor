@@ -1,0 +1,17 @@
+<?php
+namespace [CURRENT_NAMESPACE];
+
+use App\Core\Presenters\BaseViewPresenter;
+
+class [CLASSNAME] extends BaseViewPresenter
+{
+	public function __construct(){
+		$this->title = 'Presenter Name';
+		$this->view = 'view::path';
+	}
+
+	public function setSelectedMenuName(){
+		return 'active-key-name';
+	}
+
+}

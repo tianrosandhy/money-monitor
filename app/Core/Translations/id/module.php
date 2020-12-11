@@ -1,0 +1,40 @@
+<?php
+return [
+    'menu' => [
+        'dashboard' => 'Beranda',
+        'management' => 'Manajemen',
+        'language_management' => 'Pengaturan Bahasa',
+        'privilege_management' => 'Pengaturan Level User',
+        'user_list' => 'Data Pengguna',
+        'log_management' => 'Pengaturan Log',
+        'push_token' => 'Push Token Device',
+    ],
+    'global' => [
+        'language' => 'Bahasa',
+        'go_to_site' => 'Ke Hlm Depan',
+        'my_profile' => 'Profil Saya',
+        'logout' => 'Log Out',
+        'setting' => 'Pengaturan',
+        'notification' => 'Notifikasi',
+        'no_notification' => 'Tidak ada Notifikasi',
+        'internet_disconnect' => 'Ups, internet Anda saat ini terputus. Mohon periksa sinyal dan jaringan Anda',
+        'back_to_homepage' => 'Kembali Ke Halaman Utama',
+    ],
+    'login' => [
+        'h1' => 'Selamat Datang!',
+        'h2' => 'Silakan masukkan email dan password untuk mengakses halaman Admin.',
+        'remember_me' => 'Ingat Saya',
+        'forgot_password' => 'Lupa Password?',
+        'forgot_description' => 'Jika Anda lupa dengan password sebelumnya, mohon ketikkan email Anda dibawah ini dan kami akan mengirimkan link reset password ke email Anda.',
+    ],
+    'form' => [
+        'save_setting' => 'Simpan Pengaturan',
+        'save' => 'Simpan',
+        'save_and_exit' => 'Simpan dan Keluar',
+        'close' => 'Tutup',
+        'delete' => 'Hapus',
+        'delete_selected' => 'Hapus Data Terpilih',
+        'add_data' => 'Tambah Data',
+        'back' => 'Kembali',
+    ],
+];

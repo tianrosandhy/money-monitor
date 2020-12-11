@@ -1,0 +1,12 @@
+<?php
+namespace [NAMESPACE]\Facades;
+
+use Illuminate\Support\Facades\Facade;
+
+class [MODULE_NAME]Facade extends Facade
+{
+    protected static function getFacadeAccessor()
+    {
+        return \[NAMESPACE]\Services\[MODULE_NAME]Instance::class;
+    }
+}
