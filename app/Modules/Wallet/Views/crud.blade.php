@@ -13,7 +13,8 @@
 				<label class="my-0">Date</label>
 				{!! Input::date('tanggal', [
 					'attr' => [
-						'data-balance-date' => 1
+						'data-balance-date' => 1,
+						'data-maxdate' => date('Y-m-d')
 					],
 					'value' => $tanggal
 				]) !!}

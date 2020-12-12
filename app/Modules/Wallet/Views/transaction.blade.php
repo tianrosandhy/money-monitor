@@ -38,7 +38,11 @@
                     <div class="col-sm-6 col-md-5">
                         <div class="form-group">
                             <label>Filter Transaction Date</label>
-                            {!! Input::dateRange('periode[]') !!}
+                            {!! Input::dateRange('periode[]', [
+                                'attr' => [
+                                    'data-maxdate' => date('Y-m-d')
+                                ]
+                            ]) !!}
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-3">

@@ -12,9 +12,9 @@ class WalletInstance extends BaseInstance
 		parent::__construct(new Wallet);
 	}
 
-	public function getTotal($list_wallet = []){
+	public function getTotal($list_wallet = [], $date=null){
 		if(empty($list_wallet)){
-			$list_wallet = $this->listWallets();
+			$list_wallet = $this->listWallets($date);
 		}
 		$data = [
 			'total' => 0

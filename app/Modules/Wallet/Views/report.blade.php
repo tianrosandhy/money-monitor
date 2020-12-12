@@ -8,6 +8,9 @@
         <div class="row">
             <div class="col-md-8">
                 {!! Input::dateRange('periode[]', [
+                    'attr' => [
+                        'data-maxdate' => date('Y-m-d')
+                    ],
                     'value' => [
                         $start_date,
                         $end_date
